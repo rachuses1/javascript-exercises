@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer>
+
+const people = [
+      {
+        name: "Carly",
+        yearOfBirth: 2018,
+      },
+      {
+        name: "Ray",
+        yearOfBirth: 1962,
+        yearOfDeath: 2011,
+      },
+      {
+        name: "Jane",
+        yearOfBirth: 1912,
+        yearOfDeath: 1941,
+      },
+    ]
+
+
+    // const ages = people.map((person) => (person.yearOfDeath - person.yearOfBirth));
+    
+    // console.log(ages)
+
+
+    // const oldest = Math.max(...ages)
+    // console.log(oldest);
+    // const number = ages.findIndex((age) => age === oldest)
+    // console.log(number);
+    // console.log(people[number]);
+
+    const ages = people.map((person) => {
+        if(!person.yearOfDeath) {
+            Object.defineProperty(person,'yearOfDeath', {value: 2024});
+        };
+        return (person.yearOfDeath - person.yearOfBirth);
+    });
+    console.log(ages)
+
+    const oldest = Math.max(...ages);
+
+    const number = ages.findIndex((age) => age === oldest);
+
+    console.log(people[number]);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
